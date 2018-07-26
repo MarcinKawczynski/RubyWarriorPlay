@@ -4,5 +4,6 @@ class Player
       warrior.walk!
     else
       warrior.attack!
+    end
   end
 end
