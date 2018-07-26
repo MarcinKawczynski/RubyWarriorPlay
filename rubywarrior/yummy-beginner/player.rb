@@ -10,8 +10,12 @@ class Player
         puts "HP" + warrior.health.to_s + " Odpoczywam!"
       end
     else
-      puts "Wróg atakuje. HP: " + warrior.health.to_s + " Oddam mu!!!"
-      warrior.attack!
+      if warrior.feel.captive?
+        warrior.rescue!
+      else
+        puts "Wróg atakuje. HP: " + warrior.health.to_s + " Oddam mu!!!"
+        warrior.attack!
+      end
     end
     @pHealth = warrior.health
   end
